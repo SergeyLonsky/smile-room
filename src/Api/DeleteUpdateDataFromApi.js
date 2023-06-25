@@ -66,8 +66,7 @@ export async function UpdateDataUserRemoveTurn(codeUser) {
 
 
 
-//export async function UpdateDataUserAddTurn(id, userData, dayLocal, hourLocal, serial_code) {
-    export async function UpdateDataUserAddTurn(id, Doctor_Serial_Code, Service_SerialCode, userData) {
+export async function UpdateDataUserAddTurn(id, Doctor_Serial_Code, Service_SerialCode, userData) {
 
     try {
 
@@ -108,7 +107,7 @@ export async function ActiveUserInDataBase(Id) {
 }
 
 
-
+// не используется
 export async function DeletePayFile(Id) {
 
     await fetch(`${API.MEDICAL_FILE.GET}/delete/${Id}`, { method: 'PATCH' });

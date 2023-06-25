@@ -241,76 +241,21 @@ function User({ data_user }) {
 
     if (storedTheme === "dark" && data_user.day == null) {
         return (
-
             <div>
-
                 <div className="bg-white">
-
                     <Tabs id="controlled-tab-example" className="mb-3 tabsChiose " >
-
                         <Tab eventKey="Мои записи" title="Следующий прием" className='Queues'>
-
                             <Modal.Dialog className='showMyQueues'>
-
                                 <Modal.Body>
-
                                     <p>Вы не записаны на прием! <br />
                                         Перейдите на начальную страницу и нажмите "Записаться на прием". <br />
                                         или <br />
                                         <a style={{ textDecoration: "none", fontWeight: "bold" }} href='/'>нажмите здесь</a>
                                     </p>
-
                                 </Modal.Body>
-
                             </Modal.Dialog>
-
                         </Tab>
-
-
-
-                        {/* <Tab eventKey="medical File" title="Медицинские файлы + Способ оплаты" className='Medical'>
-
-                            <Table striped bordered hover size="sm">
-                                <thead>
-                                    <tr>
-                                        <th style={{ width: "1%", textAlign: "center" }}>#</th>
-                                        <th style={{ width: "3%", textAlign: "center" }}>Date Publish</th>
-                                        <th style={{ width: "18%", textAlign: "center" }}>Doctor's response</th>
-                                        <th style={{ width: "3%", textAlign: "center" }}>Price Service</th>
-                                    </tr>
-                                </thead>
-
-                                {medical_File.map(File =>
-
-                                    <tbody key={File._id}>
-                                        <tr>
-                                            <td style={{ textAlign: "center", fontSize: "14px" }}>{CountReview++}</td>
-                                            <td style={{ textAlign: "center", fontSize: "14px" }}>{File.Date_published}</td>
-                                            <td style={{ textAlign: "center", fontSize: "14px" }}>{File.textDoctor}</td>
-                                            <td style={{ textAlign: "center", fontSize: "14px" }}>{File.priceSevice}</td>
-
-                                            <td style={{ textAlign: "center", fontSize: "14px", width: "1%" }}>
-                                                <Button href={File.File_user} size="sm" variant="secondary">File</Button>
-                                            </td>
-
-                                            <td style={{ textAlign: "center", fontSize: "14px", width: "1%" }}>
-                                                <Button size="sm" variant="success" onClick={() => OpenPopUpPay(File._id, File.priceSevice, File.name)}>Pay</Button>
-                                            </td>
-
-
-                                            <Modal show={showPayService} onHide={handleClosePayService} >
-                                                <PayService hideModelPayService={hideModelPayService} />
-                                            </Modal>
-                                        </tr>
-                                    </tbody>
-                                )}
-                            </Table>
-                        </Tab> */}
-
-
-
                         <Tab eventKey="History (medical File)" title="История приемов" className='HistoryMedical'>
-
                             <Table striped bordered hover size="sm">
                                 <thead>
                                     <tr>
@@ -319,12 +264,9 @@ function User({ data_user }) {
                                         <th style={{ width: "3%", textAlign: "center" }}>Дата приема</th>
                                         <th style={{ width: "25%", textAlign: "center" }}>Заключение</th>
                                         <th style={{ width: "3%", textAlign: "center" }}>Оплата</th>
-
                                     </tr>
                                 </thead>
-
                                 {medical_File.map(File =>
-
                                     <tbody key={File.Serial_code}>
                                         <tr>
                                             <td style={{ textAlign: "center", fontSize: "14px" }}>{HistoryPayFile++}</td>
@@ -332,7 +274,6 @@ function User({ data_user }) {
                                             <td style={{ textAlign: "center", fontSize: "12px" }}>{File.Date_published}</td>
                                             <td style={{ textAlign: "center", fontSize: "14px" }}>{File.textDoctor}</td>
                                             <td style={{ textAlign: "center", fontSize: "14px" }}>{File.priceSevice} руб.</td>
-
                                             <td style={{ textAlign: "center", fontSize: "14px", width: "1%" }}>
                                                 <Button href={File.File_user} size="sm" variant="secondary">Файл</Button>
                                             </td>
@@ -341,8 +282,6 @@ function User({ data_user }) {
                                 )}
                             </Table>
                         </Tab>
-
-
 
                         <Tab eventKey="My Comments" title="Мои отзывы" className='Comments'>
 

@@ -78,14 +78,11 @@ function Doctor({ code_doctor }) {
     if (storedTheme === "dark") {
 
         return (
-
             <div>
                 <div className="bg-white">
-
                     <div className="profile">
                         <div className="profile-headerDoctor">
                             <div className="profile-header-cover"></div>
-
                             <div className="profile-header-content">
                                 <div className="profile-header-info">
                                     <h4 className="m-t-10 m-b-5">Добро пожаловать, {code_doctor.name} </h4>
@@ -93,13 +90,8 @@ function Doctor({ code_doctor }) {
                             </div>
                         </div>
                     </div>
-
-
                     <Tabs id="controlled-tab-example" className="mb-3 tabsChiose " >
-
                         <Tab eventKey="Active queues (customers)" title="Записи на прием" className='ActiveQueues'>
-
-
                             <Table striped bordered hover size="sm">
                                 <thead>
                                     <tr>
@@ -111,9 +103,7 @@ function Doctor({ code_doctor }) {
                                         <th style={{ width: "18%", textAlign: "center" }}>Услуга</th>
                                     </tr>
                                 </thead>
-
                                 {usersActive_queues.map(user =>
-
                                     <tbody key={user.User_Code} className='viewDateUser'>
                                         <tr>
                                             <td style={{ textAlign: "center", fontSize: "14px" }}>{CountClient++}</td>
@@ -122,18 +112,18 @@ function Doctor({ code_doctor }) {
                                             <td style={{ textAlign: "center", fontSize: "14px" }}>{user.Day_date}</td>
                                             <td style={{ textAlign: "center", fontSize: "14px" }}>{user.Hour_day}</td>
                                             <td style={{ textAlign: "center", fontSize: "14px" }}>{user.Service_Name}</td>
-                                            <td style={{ width: "7%" }} ><Button size="sm" variant="success" onClick={() => updateDayHour(user.User_Code, user.FirstName, user.Email, user.Cost)}>Медицинское заключение</Button></td>
+                                            <td style={{ width: "7%" }} >
+                                                <Button size="sm" variant="success" onClick={() => updateDayHour(user.User_Code, user.FirstName, user.Email, user.Cost)}>
+                                                Медицинское заключение</Button>
+                                            </td>
                                         </tr>
-
                                         <Modal show={show} style={{ background: "rgba(0, 0, 0, 0.95)" }} >
-
-                                            <AddMedicalFileUser hideModelMedicalFile={hideModelMedicalFile} codeHour={user.Serial_codeHour} userCode={user.User_Code} codeDate={user.Day_date}/>
-
+                                            <AddMedicalFileUser hideModelMedicalFile={hideModelMedicalFile} codeHour={user.Serial_codeHour}
+                                             userCode={user.User_Code} codeDate={user.Day_date}/>
                                         </Modal>
                                     </tbody>
                                 )}
                             </Table>
-
                         </Tab>
 
 

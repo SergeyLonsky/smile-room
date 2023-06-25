@@ -192,13 +192,9 @@ function Admin() {
 
         return (
             <div>
-
                 <Tabs id="controlled-tab-example" className="mb-3 tabsChiose " >
-
                     <Tab eventKey="show all users" title="Все пользователи" className='AllUsers'>
-
                         <Table bordered hover size="sm" >
-
                             <thead>
                                 <tr>
                                     <th style={{ width: "1%", textAlign: "center" }}>#</th>
@@ -209,9 +205,7 @@ function Admin() {
                                     <th style={{ width: "3%", textAlign: "center" }}>Пароль</th>
                                 </tr>
                             </thead>
-
                             {Users.map(user =>
-
                                 <tbody key={user.User_code} >
                                     <tr>
                                         <td style={{ textAlign: "center", fontSize: "13px" }}>{CountUser++}</td>
@@ -220,7 +214,6 @@ function Admin() {
                                         <td style={{ textAlign: "center", fontSize: "13px" }}>{user.Email}</td>
                                         <td style={{ textAlign: "center", fontSize: "13px" }}>{user.Birthday}</td>
                                         <td style={{ textAlign: "center", fontSize: "13px" }}>{user.User_password}</td>
-
                                         <td style={{ textAlign: "center", fontSize: "14px", width: "1%" }}>
                                             <Button size="sm" variant="danger" onClick={() => DeleteItemsFromDataApi(user.User_code, "user")}>Заблокировать</Button>
                                         </td>
@@ -229,13 +222,8 @@ function Admin() {
                             )}
                         </Table>
                     </Tab>
-
-
-
                     <Tab eventKey="show all users blocked" title="Заблокированные пользователи" className='AllUsersBlocked'>
-
                         <Table bordered hover size="sm">
-
                             <thead>
                                 <tr>
                                     <th style={{ width: "1%", textAlign: "center" }}>#</th>
@@ -246,9 +234,7 @@ function Admin() {
                                     <th style={{ width: "3%", textAlign: "center" }}>Пароль</th>
                                 </tr>
                             </thead>
-
                             {UsersBlocked.map(user =>
-
                                 <tbody key={user.User_code}>
                                     <tr>
                                         <td style={{ textAlign: "center", fontSize: "13px" }}>{CountUserBlock++}</td>
@@ -257,8 +243,6 @@ function Admin() {
                                         <td style={{ textAlign: "center", fontSize: "13px" }}>{user.Email}</td>
                                         <td style={{ textAlign: "center", fontSize: "13px" }}>{user.Birthday}</td>
                                         <td style={{ textAlign: "center", fontSize: "13px" }}>{user.User_password}</td>
-
-
                                         <td style={{ textAlign: "center", fontSize: "14px", width: "1%" }}>
                                             <Button size="sm" variant="success" onClick={() => ActiveUser(user.User_code)}>Активировать</Button>
                                         </td>
@@ -267,8 +251,6 @@ function Admin() {
                             )}
                         </Table>
                     </Tab>
-
-
 
                     <Tab eventKey="show all Doctors" title="Врачи" className='AllDoctors'>
 

@@ -17,7 +17,6 @@ export async function connectUserLogin(user) {
 
         let data = await res.json();
 
-        // if dont have this user in database show alert
         if (data == null) {
 
             Swal.fire({
@@ -26,18 +25,13 @@ export async function connectUserLogin(user) {
                 toast: true,
                 position: 'top-end'
             })
-
             return;
         }
-
-
         else {
             sessionStorage.setItem("user", JSON.stringify(data));
-            //let userCode = { User_code: data._id };
             let userCode = { User_code: data.User_code };
             sessionStorage.setItem("userCode", JSON.stringify(userCode));
         }
-
     } catch (error) {
         console.log(error);
     }
@@ -66,7 +60,6 @@ export async function connectDemoUserShow() {
         let data = await res.json();
 
         sessionStorage.setItem("user", JSON.stringify(data));
-        //let userCode = { User_code: data._id };
         let userCode = { User_code: data.User_code };
         sessionStorage.setItem("userCode", JSON.stringify(userCode));
 

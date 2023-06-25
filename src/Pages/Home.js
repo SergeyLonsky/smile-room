@@ -71,7 +71,6 @@ function Home() {
                         <p>в клинику SmileRoom</p>
                     </div>                    
                 </div>
-
                 <div className='Click_appointment'>
 
                     <div className='d-grid gap-2 click'>
@@ -80,7 +79,6 @@ function Home() {
                         </Button>
                     </div>
 
-                    {/* show model popup Appointment */}
                     <div className='bookClick'>
                         <Modal show={show} onHide={handleClose} style={{ background: "rgba(0, 0, 0, 0.8)" }}>
 
@@ -99,7 +97,6 @@ function Home() {
                             </Modal.Body>
                         </Modal>
                     </div>
-
                 </div>
                 <div className="titluslug1">
                     <div className="titluslug">
@@ -112,7 +109,6 @@ function Home() {
                             <div className="item-icon group"></div>
                             <div className="item-body">
                                 <h3>Терапевтическая стоматология</h3>
-                                {/* <p>Терапевтическая стоматология помогает как можно дольше сохранять зубы здоровыми и красивыми. Эта область стоматологии помогает вовремя диагностировать заболевания зубов, предупредить поражение кариесом.</p> */}
                             </div>
                             <div className="item-footer">
                                 <a href="/OurServicesAndPrice" className="link"><span>Подробнее</span></a>
@@ -124,8 +120,6 @@ function Home() {
                             <div className="item-icon tree"></div>
                             <div className="item-body">
                                 <h3>Эстетическая реставрация зубов</h3>
-                                {/* <p>Реставрация сколов зуба – одно из наших основных направлений работы.
-                                Мы исправляем любые дефекты и разрушения, наращиваем зуб специальным материалом, что позволяет вернуть улыбке совершенство.</p> */}
                             </div>
                             <div className="item-footer">
                                 <a href="/OurServicesAndPrice" className="link"><span>Подробнее</span></a>
@@ -137,8 +131,6 @@ function Home() {
                             <div className="item-icon anchor"></div>
                             <div className="item-body">
                                 <h3>Виниринговое покрытие зубов</h3>
-                                {/* <p>Реставрация сколов зуба – одно из наших основных направлений работы.
-                                Мы исправляем любые дефекты и разрушения, наращиваем зуб специальным материалом, что позволяет вернуть улыбке совершенство.</p> */}
                             </div>
                             <div className="item-footer">
                                 <a href="/OurServicesAndPrice" className="link"><span>Подробнее</span></a>
