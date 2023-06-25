@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Helmet } from "react-helmet"
 import React from 'react'
 import Register from './Pages/Register'
 import Home from './Pages/Home'
@@ -18,6 +19,9 @@ function App() {
 
   return (
     <BrowserRouter>
+      <Helmet>
+          <title>Клиника SmileRoom</title>
+     </Helmet>  
 
       {/* active dark node or light */}
       <DarkMode />
@@ -41,7 +45,6 @@ function App() {
       <Fotter />
 
     </BrowserRouter>
-
   );
 }
 
