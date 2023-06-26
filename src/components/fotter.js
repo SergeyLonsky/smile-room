@@ -76,34 +76,34 @@ function Fotter() {
 
                         <div className='container p-4 pb-0'>
                             <section className='mb-4'>
-                                <a
+                                {/* <a
                                     className='btn btn-primary btn-floating m-1'
                                     style={{ backgroundColor: '#3b5998', border: "none" }}
                                     href='https://www.facebook.com/profile.php?id=100007268836178'
                                     role='button'
                                 >
                                     <MDBIcon fab icon='facebook-f' />
-                                </a>
+                                </a> */}
 
 
                                 <a
                                     className='btn btn-primary btn-floating m-1'
                                     style={{ backgroundColor: '#ac2bac', border: "none" }}
-                                    href='https://www.instagram.com/artem_kot96'
+                                    href='https://instagram.com/ritterss?igshid=NTc4MTIwNjQ2YQ=='
                                     role='button'
                                 >
                                     <MDBIcon fab icon='instagram' />
                                 </a>
 
 
-                                <a
+                                {/* <a
                                     className='btn btn-primary btn-floating m-1'
                                     style={{ backgroundColor: '#0077b5', border: "none" }}
                                     href='https://www.linkedin.com/in/artem-kot96'
                                     role='button'
                                 >
                                     <MDBIcon fab icon='linkedin' />
-                                </a>
+                                </a> */}
 
                             </section>
                         </div>

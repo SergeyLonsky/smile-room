@@ -201,21 +201,16 @@ function Home() {
                 </div>
                 <div className="container">
                     <div className="row">
-                        {data1.doctors_exp.map(doctor =>
-                            <div className="col-md-4 col-sm-6">
+                    {data1.doctors_exp.filter(d => d.Active == "1").map(doctor =>
+                            <div className="col-md-4 col-sm-6" key={doctor.User_code}>
                                 <div className="box">
                                     <div className="pic">
-                                        <img src="http://drawings-girls.ucoz.net/2015/07/krasivaya-devushka-s-rasprostyortimi-rukami.jpg" alt=""/>
+                                        <img src={doctor.path} alt=""/>
                                     </div>
-                                    <ul className="social-links">
-                                        <li><a href="#" className="fa fa-facebook"></a></li>
-                                        <li><a href="#" className="fa fa-google"></a></li>
-                                        <li><a href="#" className="fa fa-twitter"></a></li>
-                                    </ul>
                                     <div className="over-layer">
                                         <h4 className="post">
                                             <a href="#">{doctor.Name}</a>
-                                            <small>{doctor.experience}</small>
+                                            <small>Стаж работы: {doctor.experience}</small>
                                         </h4>
                                     </div>
                                 </div>
@@ -364,11 +359,6 @@ function Home() {
                                     <div className="pic">
                                         <img src={doctor.path} alt=""/>
                                     </div>
-                                    {/* <ul className="social-links">
-                                        <li><a href="#" className="fa fa-facebook"><MDBIcon fab icon='instagram' /></a></li>
-                                        <li><a href="#" className="fa fa-google"></a></li>
-                                        <li><a href="#" className="fa fa-twitter"></a></li>
-                                    </ul> */}
                                     <div className="over-layer">
                                         <h4 className="post">
                                             <a href="#">{doctor.Name}</a>
