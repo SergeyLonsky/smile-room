@@ -1,10 +1,14 @@
 import { Button, Modal, Form } from 'react-bootstrap'
+import { MDBFooter, MDBIcon } from 'mdb-react-ui-kit';
+import data1 from '../Json_date/date.json'
+import { LoadAllDoctors } from '../Api/LoadDataFromApi'
 import '../css/home.css'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import videoBg from '../images/FilmForth Untitled.mp4'
 import Category from '../components/category'
 import Appointment from '../components/Appointment'
 import Swal from 'sweetalert2'
+
 
 
 // Home page
@@ -17,6 +21,8 @@ function Home() {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const [Doctors, SetDoctors] = useState([]);
+    const [ExpDoctors, SetExpDoctors] = useState([]);
 
     let userData = JSON.parse(sessionStorage.getItem("user"));
 
@@ -58,12 +64,22 @@ function Home() {
         }
     }
 
+   
+    useEffect(() => {
+        
+        Swal.fire({
+            background: 'none',
+            showConfirmButton: false,
+            timer: 2100,
+            html: '<img src="https://i.postimg.cc/pLT9cd9Z/12.png" height="200"></img>'
+        })
+    }, [])
+
 
     if (storedTheme === "light") {
 
         return (
             <div>
-
                 <div className='main1'>
                     <video src={videoBg} loop autoPlay muted playsInline />
                     <div className="content">
@@ -106,7 +122,9 @@ function Home() {
                 <div className="post-wrap">
                     <div className="post-item">
                         <div className="item-content">
-                            <div className="item-icon group"></div>
+                            {/* <div className="item-icon group"> */}
+                            <img src={require("../images/icons8-tooth-broken-from-root-canal-cavity-after-a-old-age-24.png")} alt="icon" />
+                            {/* </div> */}
                             <div className="item-body">
                                 <h3>Терапевтическая стоматология</h3>
                             </div>
@@ -117,7 +135,8 @@ function Home() {
                     </div>
                     <div className="post-item">
                         <div className="item-content">
-                            <div className="item-icon tree"></div>
+                            {/* <div className="item-icon tree"></div> */}
+                            <img src={require("../images/icons8-зубная-коронка-24.png")} alt="icon" />                            
                             <div className="item-body">
                                 <h3>Эстетическая реставрация зубов</h3>
                             </div>
@@ -128,7 +147,8 @@ function Home() {
                     </div>
                     <div className="post-item">
                         <div className="item-content">
-                            <div className="item-icon anchor"></div>
+                            {/* <div className="item-icon anchor"></div> */}
+                            <img src={require("../images/icons8-брекеты-24.png")} alt="icon" />
                             <div className="item-body">
                                 <h3>Виниринговое покрытие зубов</h3>
                             </div>
@@ -139,10 +159,10 @@ function Home() {
                     </div>
                     <div className="post-item">
                         <div className="item-content">
-                            <div className="item-icon video"></div>
+                            {/* <div className="item-icon video"></div> */}
+                            <img src={require("../images/icons8-painkiller-capsule-to-overcome-the-toothache-layout-24.png")} alt="icon" />                            
                             <div className="item-body">
                                 <h3>Детская стоматология</h3>
-                                {/* <p>Наши стоматологи много лет работают с детьми и найдут подход к вашему ребенку.</p> */}
                             </div>
                             <div className="item-footer">
                                 <a href="/OurServicesAndPrice" className="link"><span>Подробнее</span></a>
@@ -151,10 +171,10 @@ function Home() {
                     </div>
                     <div className="post-item">
                         <div className="item-content">
-                            <div className="item-icon photo"></div>
+                            {/* <div className="item-icon photo"></div> */}
+                            <img src={require("../images/icons8-зубная-паста-24.png")} alt="icon" />
                             <div className="item-body">
                                 <h3>Профессионально отбеливание зубов</h3>
-                                {/* <p>это отличный способ получить естественную белоснежную улыбку.Что нужно знать о нашем отбеливании</p> */}
                             </div>
                             <div className="item-footer">
                                 <a href="/OurServicesAndPrice" className="link"><span>Подробнее</span></a>
@@ -163,15 +183,44 @@ function Home() {
                     </div>
                     <div className="post-item">
                         <div className="item-content">
-                            <div className="item-icon gift"></div>
+                            {/* <div className="item-icon gift"></div> */}
+                            <img src={require("../images/icons8-search-for-the-dentist-in-your-local-24.png")} alt="icon" />
                             <div className="item-body">
                                 <h3>Лечение зубов под микроскопом</h3>
-                                {/* <p>Благодаря такой диагностике можно предупредить развитие кариеса, тем самым сохранить здоровую улыбку.</p> */}
                             </div>
                             <div className="item-footer">
                                 <a href="/OurServicesAndPrice" className="link"><span>Подробнее</span></a>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div className="titluslug1">
+                    <div className="titluslug">
+                        <p>Наши врачи </p>
+                    </div>
+                </div>
+                <div className="container">
+                    <div className="row">
+                        {data1.doctors_exp.map(doctor =>
+                            <div className="col-md-4 col-sm-6">
+                                <div className="box">
+                                    <div className="pic">
+                                        <img src="http://drawings-girls.ucoz.net/2015/07/krasivaya-devushka-s-rasprostyortimi-rukami.jpg" alt=""/>
+                                    </div>
+                                    <ul className="social-links">
+                                        <li><a href="#" className="fa fa-facebook"></a></li>
+                                        <li><a href="#" className="fa fa-google"></a></li>
+                                        <li><a href="#" className="fa fa-twitter"></a></li>
+                                    </ul>
+                                    <div className="over-layer">
+                                        <h4 className="post">
+                                            <a href="#">{doctor.Name}</a>
+                                            <small>{doctor.experience}</small>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
                 <Category></Category>
@@ -230,10 +279,11 @@ function Home() {
                 <div className="post-wrap">
                     <div className="post-item">
                         <div className="item-content">
-                            <div className="item-icon group"></div>
+                            {/* <div className="item-icon group"> */}
+                                <img src={require("../images/icons8-tooth-broken-from-root-canal-cavity-after-a-old-age-24.png")} alt="icon" />
+                                {/* </div> */}
                             <div className="item-body">
                                 <h3>Терапевтическая стоматология</h3>
-                                {/* <p>Терапевтическая стоматология помогает как можно дольше сохранять зубы здоровыми и красивыми. Эта область стоматологии помогает вовремя диагностировать заболевания зубов, предупредить поражение кариесом.</p> */}
                             </div>
                             <div className="item-footer">
                                 <a href="/OurServicesAndPrice" className="link"><span>Подробнее</span></a>
@@ -242,11 +292,10 @@ function Home() {
                     </div>
                     <div className="post-item">
                         <div className="item-content">
-                            <div className="item-icon tree"></div>
+                            {/* <div className="item-icon tree"></div> */}
+                            <img src={require("../images/icons8-зубная-коронка-24.png")} alt="icon" />                            
                             <div className="item-body">
                                 <h3>Эстетическая реставрация зубов</h3>
-                                {/* <p>Реставрация сколов зуба – одно из наших основных направлений работы.
-                                Мы исправляем любые дефекты и разрушения, наращиваем зуб специальным материалом, что позволяет вернуть улыбке совершенство.</p> */}
                             </div>
                             <div className="item-footer">
                                 <a href="/OurServicesAndPrice" className="link"><span>Подробнее</span></a>
@@ -255,11 +304,10 @@ function Home() {
                     </div>
                     <div className="post-item">
                         <div className="item-content">
-                            <div className="item-icon anchor"></div>
+                            {/* <div className="item-icon anchor"></div> */}
+                            <img src={require("../images/icons8-брекеты-24.png")} alt="icon" />
                             <div className="item-body">
                                 <h3>Виниринговое покрытие зубов</h3>
-                                {/* <p>Реставрация сколов зуба – одно из наших основных направлений работы.
-                                Мы исправляем любые дефекты и разрушения, наращиваем зуб специальным материалом, что позволяет вернуть улыбке совершенство.</p> */}
                             </div>
                             <div className="item-footer">
                                 <a href="/OurServicesAndPrice" className="link"><span>Подробнее</span></a>
@@ -268,10 +316,10 @@ function Home() {
                     </div>
                     <div className="post-item">
                         <div className="item-content">
-                            <div className="item-icon video"></div>
+                            {/* <div className="item-icon video"></div> */}
+                            <img src={require("../images/icons8-painkiller-capsule-to-overcome-the-toothache-layout-24.png")} alt="icon" />
                             <div className="item-body">
                                 <h3>Детская стоматология</h3>
-                                {/* <p>Наши стоматологи много лет работают с детьми и найдут подход к вашему ребенку.</p> */}
                             </div>
                             <div className="item-footer">
                                 <a href="/OurServicesAndPrice" className="link"><span>Подробнее</span></a>
@@ -280,10 +328,10 @@ function Home() {
                     </div>
                     <div className="post-item">
                         <div className="item-content">
-                            <div className="item-icon photo"></div>
+                            {/* <div className="item-icon photo"></div> */}
+                            <img src={require("../images/icons8-зубная-паста-24.png")} alt="icon" />
                             <div className="item-body">
                                 <h3>Профессионально отбеливание зубов</h3>
-                                {/* <p>это отличный способ получить естественную белоснежную улыбку.Что нужно знать о нашем отбеливании</p> */}
                             </div>
                             <div className="item-footer">
                                 <a href="/OurServicesAndPrice" className="link"><span>Подробнее</span></a>
@@ -292,15 +340,44 @@ function Home() {
                     </div>
                     <div className="post-item">
                         <div className="item-content">
-                            <div className="item-icon gift"></div>
+                            {/* <div className="item-icon gift"></div> */}
+                            <img src={require("../images/icons8-search-for-the-dentist-in-your-local-24.png")} alt="icon" />
                             <div className="item-body">
                                 <h3>Лечение зубов под микроскопом</h3>
-                                {/* <p>Благодаря такой диагностике можно предупредить развитие кариеса, тем самым сохранить здоровую улыбку.</p> */}
                             </div>
                             <div className="item-footer">
                                 <a href="/OurServicesAndPrice" className="link"><span>Подробнее</span></a>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div className="titluslug1">
+                    <div className="titluslug">
+                        <p>Наши врачи </p>
+                    </div>
+                </div>
+                <div className="container">
+                    <div className="row">
+                        {data1.doctors_exp.filter(d => d.Active == "1").map(doctor =>
+                            <div className="col-md-4 col-sm-6" key={doctor.User_code}>
+                                <div className="box">
+                                    <div className="pic">
+                                        <img src={doctor.path} alt=""/>
+                                    </div>
+                                    {/* <ul className="social-links">
+                                        <li><a href="#" className="fa fa-facebook"><MDBIcon fab icon='instagram' /></a></li>
+                                        <li><a href="#" className="fa fa-google"></a></li>
+                                        <li><a href="#" className="fa fa-twitter"></a></li>
+                                    </ul> */}
+                                    <div className="over-layer">
+                                        <h4 className="post">
+                                            <a href="#">{doctor.Name}</a>
+                                            <small>Стаж работы: {doctor.experience}</small>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
                 <Category></Category>

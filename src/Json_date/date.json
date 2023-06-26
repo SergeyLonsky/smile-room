@@ -114,6 +114,38 @@
 
   ],
 
+  "doctors_exp": [
+
+    {
+      "User_code": "8",
+      "experience": "10 лет",
+      "Name": "Иванов И.И.",
+      "Active": "1",
+      "path": "https://grodno.lode.by/images/cache/f38/8b957f64b145ac28c6890c615bb75828.jpg"
+    },
+    {
+      "User_code": "9",
+      "experience": "6 лет",
+      "Name": "Доктор Кто",
+      "Active": "1",
+      "path": "https://grodno.lode.by/images/cache/eb7/4c1bd8f1918865fe1cf212e42d564106.jpg"
+    },
+    {
+      "User_code": "10",
+      "experience": "4 года",
+      "Name": "Лонская А.С.",
+      "Active": "1",
+      "path": "https://grodno.lode.by/images/cache/282/itwjs9d4hua629kdjwiyn4fe5onqocfs.png"
+    },
+    {
+      "User_code": "14",
+      "experience": "1 год",
+      "Name": "Петров П.П.",
+      "Active": "0",
+      "path": "https://grodno.lode.by/images/cache/89e/ublo0t6sv8i078cbib9dzakksm7o2dz4.png"
+    }
+  ],
+
   "Reviews": [{
       "id": "1",
       "userName": "Артем",
@@ -144,9 +176,4 @@
     }
 
   ]
-
-
-
-
-
 }
