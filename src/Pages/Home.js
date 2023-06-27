@@ -162,7 +162,7 @@ function Home() {
                             {/* <div className="item-icon video"></div> */}
                             <img src={require("../images/icons8-painkiller-capsule-to-overcome-the-toothache-layout-24.png")} alt="icon" />                            
                             <div className="item-body">
-                                <h3>Детская стоматология</h3>
+                                <h3>Детская терапевтическая стоматология</h3>
                             </div>
                             <div className="item-footer">
                                 <a href="/OurServicesAndPrice" className="link"><span>Подробнее</span></a>
@@ -314,7 +314,7 @@ function Home() {
                             {/* <div className="item-icon video"></div> */}
                             <img src={require("../images/icons8-painkiller-capsule-to-overcome-the-toothache-layout-24.png")} alt="icon" />
                             <div className="item-body">
-                                <h3>Детская стоматология</h3>
+                                <h3>Детская терапевтическая стоматология</h3>
                             </div>
                             <div className="item-footer">
                                 <a href="/OurServicesAndPrice" className="link"><span>Подробнее</span></a>
@@ -326,7 +326,7 @@ function Home() {
                             {/* <div className="item-icon photo"></div> */}
                             <img src={require("../images/icons8-зубная-паста-24.png")} alt="icon" />
                             <div className="item-body">
-                                <h3>Профессионально отбеливание зубов</h3>
+                                <h3>Профессиональное отбеливание зубов</h3>
                             </div>
                             <div className="item-footer">
                                 <a href="/OurServicesAndPrice" className="link"><span>Подробнее</span></a>

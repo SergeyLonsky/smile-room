@@ -277,7 +277,7 @@ html::-webkit-scrollbar-thumb {
  }
  @media (min-width: 960px) {
     .post-item {
-       flex-basis: 33.333333333%;
+       flex-basis: 43.333333333%;
     }
  }
 
