@@ -50,10 +50,11 @@ function Admin() {
         setShowModal(false);
     }
 
-    const updateService = async (Service_Name, Description, Cost) => {
+    const updateService = async (Service_Name, Description, Cost, Serial_code) => {
 
         let data =
         {
+            Serial_code: Serial_code,
             Service_Name: Service_Name,
             Description: Description,
             Cost: Cost
@@ -483,7 +484,7 @@ function Admin() {
                                         <td style={{ textAlign: "center", fontSize: "13px" }}>{service.Description}</td>
                                         <td style={{ textAlign: "center", fontSize: "13px" }}>{service.Cost}</td>
                                         <td style={{ textAlign: "center", fontSize: "14px", width: "1%" }}>
-                                            <Button size="sm" variant="success" onClick={() => updateService(service.Service_Name, service.Description, service.Cost)}>Редактировать</Button>
+                                            <Button size="sm" variant="success" onClick={() => updateService(service.Service_Name, service.Description, service.Cost, service.Serial_code)}>Редактировать</Button>
                                         </td>
                                     </tr>
                                     <Modal show={showModal} style={{ background: "rgba(0, 0, 0, 0.95)" }} >
@@ -817,7 +818,7 @@ function Admin() {
                                         <td style={{ textAlign: "center", fontSize: "13px" }}>{service.Description}</td>
                                         <td style={{ textAlign: "center", fontSize: "13px" }}>{service.Cost}</td>
                                         <td style={{ textAlign: "center", fontSize: "14px", width: "1%" }}>
-                                            <Button size="sm" variant="success" onClick={() => updateService(service.Service_Name, service.Description, service.Cost)}>Редактировать</Button>
+                                            <Button size="sm" variant="success" onClick={() => updateService(service.Service_Name, service.Description, service.Cost, service.Serial_code)}>Редактировать</Button>
                                         </td>
                                     </tr>
                                     <Modal show={showModal} style={{ background: "rgba(0, 0, 0, 0.95)" }} >

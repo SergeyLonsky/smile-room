@@ -251,7 +251,7 @@ html::-webkit-scrollbar-thumb {
     bottom: 0;
     height: .125rem;
     margin: auto;
-    background: #525157;
+    /* background: #525157; */
     transform: scaleX(.2);
     transform-origin: left center;
     z-index: 0;

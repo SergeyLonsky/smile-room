@@ -6,6 +6,7 @@ import { UpdateSerice } from '../Api/DeleteUpdateDataFromApi'
 
 function EditService(props) {
 
+    const [Serial_code, setSerial_Code] = useState('');
     const [Service_Name, setService_Name] = useState('');
     const [Description, setDescriprion] = useState('');
     const [Cost, setCost] = useState('');    
@@ -14,6 +15,7 @@ function EditService(props) {
 
         let data = JSON.parse(sessionStorage.getItem("serviceData"));
                 //show use date- when i update user date i show all value in input and choise what i need update
+        setSerial_Code(data.Serial_code);
         setService_Name(data.Service_Name);
         setDescriprion(data.Description);
         setCost(data.Cost);
@@ -54,11 +56,11 @@ function EditService(props) {
             Cost : Cost,
         };
 
-        await UpdateSerice(props.serialCode, service)        
+        await UpdateSerice(Serial_code, service)        
 
         Swal.fire({
-            title: 'success',
-            icon: 'success',
+            title: 'Успешно',
+            icon: 'Success',
             toast: true,
             position: 'top-end'
         }).then((result) => {

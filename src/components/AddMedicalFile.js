@@ -71,7 +71,7 @@ function AddMedicalFileUser(props) {
         await UpdateDataUserRemoveTurn(date.User_code);
 
         Swal.fire({
-            title: 'success',
+            title: 'Успешно',
             icon: 'success',
             toast: true,
             position: 'top-end'

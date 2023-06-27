@@ -90,7 +90,7 @@ function Home() {
                 <div className='Click_appointment'>
 
                     <div className='d-grid gap-2 click'>
-                        <Button variant="warning" size="sm" onClick={CheckUserConnected}>
+                        <Button variant="warning" size="lg" onClick={CheckUserConnected}>
                         Записаться на прием
                         </Button>
                     </div>
